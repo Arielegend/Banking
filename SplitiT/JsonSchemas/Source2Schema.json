@@ -1,0 +1,138 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Temperatures",
+  "definitions": {
+    "Temperatures": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "live": {
+          "type": "string",
+          "format": "boolean"
+        },
+        "notificationItems": {
+          "$ref": "#/definitions/NotificationItems"
+        }
+      },
+      "required": [
+        "live",
+        "notificationItems"
+      ],
+      "title": "Temperatures"
+    },
+    "NotificationItems": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "NotificationRequestItem": {
+          "$ref": "#/definitions/NotificationRequestItem"
+        }
+      },
+      "required": [
+        "NotificationRequestItem"
+      ],
+      "title": "NotificationItems"
+    },
+    "NotificationRequestItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "$ref": "#/definitions/Amount"
+        },
+        "eventCode": {
+          "type": "string"
+        },
+        "TransactionId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "PurchaseHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurchaseHistory"
+          }
+        },
+        "eventDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "merchantAccountCode": {
+          "type": "string"
+        },
+        "merchantReference": {
+          "type": "string"
+        },
+        "originalReference": {
+          "type": "string"
+        },
+        "paymentMethod": {
+          "type": "string"
+        },
+        "pspReference": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "success": {
+          "type": "string",
+          "format": "boolean"
+        }
+      },
+      "required": [
+        "PurchaseHistory",
+        "TransactionId",
+        "amount",
+        "eventCode",
+        "eventDate",
+        "merchantAccountCode",
+        "merchantReference",
+        "originalReference",
+        "paymentMethod",
+        "pspReference",
+        "reason",
+        "success"
+      ],
+      "title": "NotificationRequestItem"
+    },
+    "PurchaseHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "month": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Id",
+        "month",
+        "year"
+      ],
+      "title": "PurchaseHistory"
+    },
+    "Amount": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "type": "string"
+        },
+        "value": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "currency",
+        "value"
+      ],
+      "title": "Amount"
+    }
+  }
+}
