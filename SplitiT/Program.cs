@@ -12,7 +12,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IPayload1Service, Payload1Service>();
 builder.Services.AddTransient<IPayload2Service, Payload2Service>();
