@@ -6,10 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-	<PropertyGroup>
-		<DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
-	</PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Models\obj\**" />
     <Content Remove="Models\obj\**" />
