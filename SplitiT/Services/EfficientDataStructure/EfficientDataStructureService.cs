@@ -2,7 +2,7 @@
 {
     public class EfficientDataStructureService : IEfficientDataStructureService
     {
-        Dictionary<string, List<string>> _efficientDataStructure;
+        public Dictionary<string, List<string>> _efficientDataStructure;
 
         public EfficientDataStructureService()
         {
