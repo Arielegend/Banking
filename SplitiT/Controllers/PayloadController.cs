@@ -126,6 +126,13 @@ namespace SplitiT.Controllers
                 return;
             }
 
+            if(purchaseHIstory.Count == 1)
+            {
+                Console.WriteLine($"\nThere is a single purchase made in {monthYearString}\n");
+                Console.WriteLine($"\t{purchaseHIstory[0]}");
+                return;
+            }
+
             Console.WriteLine($"\nPurchases Id's made in {monthYearString}\nThere are {purchaseHIstory.Count} purchases this month\n");
             foreach (var purchaseId in purchaseHIstory)
             {
