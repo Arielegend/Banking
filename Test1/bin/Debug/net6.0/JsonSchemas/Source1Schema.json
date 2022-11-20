@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Temperatures",
+  "definitions": {
+    "Temperatures": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "AVS": {
+          "type": "string",
+          "format": "integer"
+        },
+        "address": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "amountString": {
+          "type": "string"
+        },
+        "TransactionId": {
+          "type": "string"
+        },
+        "authAmount": {
+          "type": "integer"
+        },
+        "authAmountString": {
+          "type": "string"
+        },
+        "authCurrency": {
+          "type": "string"
+        },
+        "authMode": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "cartId": {
+          "type": "string"
+        },
+        "charenc": {
+          "type": "string"
+        },
+        "compName": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryMatch": {
+          "type": "string",
+          "format": "integer"
+        },
+        "countryString": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fax": {
+          "type": "string"
+        },
+        "futurePayId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "instId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "installation": {
+          "type": "string",
+          "format": "integer"
+        },
+        "msgType": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "rawAuthCode": {
+          "type": "string"
+        },
+        "PurchaseHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurchaseHistory"
+          }
+        },
+        "rawAuthMessage": {
+          "type": "string"
+        },
+        "SP.charEnc": {
+          "type": "string"
+        },
+        "tel": {
+          "type": "string"
+        },
+        "testMode": {
+          "type": "string",
+          "format": "integer"
+        },
+        "transTime": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "AVS",
+        "PurchaseHistory",
+        "SP.charEnc",
+        "TransactionId",
+        "address",
+        "amount",
+        "amountString",
+        "authAmount",
+        "authAmountString",
+        "authCurrency",
+        "authMode",
+        "cardType",
+        "cartId",
+        "charenc",
+        "compName",
+        "country",
+        "countryMatch",
+        "countryString",
+        "currency",
+        "desc",
+        "email",
+        "fax",
+        "futurePayId",
+        "instId",
+        "installation",
+        "msgType",
+        "name",
+        "postcode",
+        "rawAuthCode",
+        "rawAuthMessage",
+        "tel",
+        "testMode",
+        "transTime"
+      ],
+      "title": "Temperatures"
+    },
+    "PurchaseHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "month": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Id",
+        "month",
+        "year"
+      ],
+      "title": "PurchaseHistory"
+    }
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Temperatures",
+  "definitions": {
+    "Temperatures": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "object": {
+          "$ref": "#/definitions/Object"
+        }
+      },
+      "required": [
+        "object"
+      ],
+      "title": "Temperatures"
+    },
+    "Object": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "object": {
+          "type": "string"
+        },
+        "account_country": {
+          "type": "string"
+        },
+        "account_name": {
+          "type": "string"
+        },
+        "account_tax_ids": {
+          "type": "null"
+        },
+        "amount_due": {
+          "type": "integer"
+        },
+        "amount_paid": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "custom_fields": {
+          "type": "null"
+        },
+        "customer": {
+          "type": "string"
+        },
+        "customer_address": {
+          "$ref": "#/definitions/CustomerAddress"
+        },
+        "customer_email": {
+          "type": "string"
+        },
+        "customer_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "discount": {
+          "type": "null"
+        },
+        "discounts": {
+          "type": "array",
+          "items": {}
+        },
+        "due_date": {
+          "type": "null"
+        },
+        "Purchases": {
+          "$ref": "#/definitions/Purchases"
+        },
+        "lines": {
+          "$ref": "#/definitions/Lines"
+        },
+        "livemode": {
+          "type": "boolean"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        }
+      },
+      "required": [
+        "Purchases",
+        "account_country",
+        "account_name",
+        "account_tax_ids",
+        "amount_due",
+        "amount_paid",
+        "created",
+        "currency",
+        "custom_fields",
+        "customer",
+        "customer_address",
+        "customer_email",
+        "customer_name",
+        "description",
+        "discount",
+        "discounts",
+        "due_date",
+        "id",
+        "lines",
+        "livemode",
+        "metadata",
+        "object"
+      ],
+      "title": "Object"
+    },
+    "Purchases": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "PurchaseHistory": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PurchaseHistory"
+          }
+        }
+      },
+      "required": [
+        "PurchaseHistory"
+      ],
+      "title": "Purchases"
+    },
+    "PurchaseHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "month": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Id",
+        "month",
+        "year"
+      ],
+      "title": "PurchaseHistory"
+    },
+    "CustomerAddress": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "city": {
+          "type": "null"
+        },
+        "country": {
+          "type": "string"
+        },
+        "line1": {
+          "type": "null"
+        },
+        "line2": {
+          "type": "null"
+        },
+        "postal_code": {
+          "type": "string",
+          "format": "integer"
+        },
+        "state": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "line1",
+        "line2",
+        "postal_code",
+        "state"
+      ],
+      "title": "CustomerAddress"
+    },
+    "Lines": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "object": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/Data"
+        },
+        "has_more": {
+          "type": "boolean"
+        },
+        "total_count": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "data",
+        "has_more",
+        "object",
+        "total_count",
+        "url"
+      ],
+      "title": "Lines"
+    },
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "TransactionId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "object": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "period": {
+          "$ref": "#/definitions/Period"
+        },
+        "plan": {
+          "$ref": "#/definitions/Plan"
+        },
+        "price": {
+          "$ref": "#/definitions/Price"
+        }
+      },
+      "required": [
+        "TransactionId",
+        "amount",
+        "currency",
+        "id",
+        "object",
+        "period",
+        "plan",
+        "price"
+      ],
+      "title": "Data"
+    },
+    "Period": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "type": "integer"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "title": "Period"
+    },
+    "Plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "object": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "aggregate_usage": {
+          "type": "null"
+        },
+        "amount": {
+          "type": "integer"
+        },
+        "amount_decimal": {
+          "type": "string",
+          "format": "integer"
+        },
+        "billing_scheme": {
+          "type": "string"
+        },
+        "created": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "interval": {
+          "type": "string"
+        },
+        "interval_count": {
+          "type": "integer"
+        },
+        "livemode": {
+          "type": "boolean"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "nickname": {
+          "type": "null"
+        },
+        "product": {
+          "type": "string"
+        },
+        "tiers_mode": {
+          "type": "null"
+        },
+        "transform_usage": {
+          "type": "null"
+        },
+        "trial_period_days": {
+          "type": "null"
+        },
+        "usage_type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "active",
+        "aggregate_usage",
+        "amount",
+        "amount_decimal",
+        "billing_scheme",
+        "created",
+        "currency",
+        "id",
+        "interval",
+        "interval_count",
+        "livemode",
+        "metadata",
+        "nickname",
+        "object",
+        "product",
+        "tiers_mode",
+        "transform_usage",
+        "trial_period_days",
+        "usage_type"
+      ],
+      "title": "Plan"
+    },
+    "Metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Metadata"
+    },
+    "Price": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "object": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "billing_scheme": {
+          "type": "string"
+        },
+        "created": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "livemode": {
+          "type": "boolean"
+        },
+        "lookup_key": {
+          "type": "null"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata"
+        },
+        "nickname": {
+          "type": "null"
+        },
+        "product": {
+          "type": "string"
+        },
+        "recurring": {
+          "$ref": "#/definitions/Recurring"
+        },
+        "tax_behavior": {
+          "type": "string"
+        },
+        "tiers_mode": {
+          "type": "null"
+        },
+        "transform_quantity": {
+          "type": "null"
+        },
+        "type": {
+          "type": "string"
+        },
+        "unit_amount": {
+          "type": "integer"
+        },
+        "unit_amount_decimal": {
+          "type": "string",
+          "format": "integer"
+        }
+      },
+      "required": [
+        "active",
+        "billing_scheme",
+        "created",
+        "currency",
+        "id",
+        "livemode",
+        "lookup_key",
+        "metadata",
+        "nickname",
+        "object",
+        "product",
+        "recurring",
+        "tax_behavior",
+        "tiers_mode",
+        "transform_quantity",
+        "type",
+        "unit_amount",
+        "unit_amount_decimal"
+      ],
+      "title": "Price"
+    },
+    "Recurring": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "aggregate_usage": {
+          "type": "null"
+        },
+        "interval": {
+          "type": "string"
+        },
+        "interval_count": {
+          "type": "integer"
+        },
+        "trial_period_days": {
+          "type": "null"
+        },
+        "usage_type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "aggregate_usage",
+        "interval",
+        "interval_count",
+        "trial_period_days",
+        "usage_type"
+      ],
+      "title": "Recurring"
+    }
+  }
+}
